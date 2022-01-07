@@ -11,7 +11,7 @@ int main()
     int nb_acc_l = 0 , nb_acc_e = 0  ;
     int cle=0,op=0, cond =0,choix;
     int nb_de_insertion = 0, nb_de_suppression = 0 ;
-    int trouv , size_text= 200 ;
+    int trouv , size_text= 2000 ;
     Tenreg hamza;
     FILE *f;
     //Menu();
@@ -55,13 +55,13 @@ int main()
     FILE *g = fopen("./test2/insr1_sup1_test.csv","w+");
     
     fprintf(g,"ins1_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins1_lect[i] != 0){fprintf(g,"%d;",acc_ins1_lect[i]);}}
+    for (int i = 0; i < 1000; i++){if (acc_ins1_lect[i] != 0){fprintf(g,"%d;",acc_ins1_lect[i]);}}
     fprintf(g,"\nins1_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins1_ecr[i] != 0){fprintf(g,"%d;",acc_ins1_ecr[i]);}}
+    for (int i = 0; i < 1000; i++){if (acc_ins1_ecr[i] != 0){fprintf(g,"%d;",acc_ins1_ecr[i]);}}
     fprintf(g,"\nsup1_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup1_lect[i] != 0){fprintf(g,"%d;",acc_sup1_lect[i]);}}
+    for (int i = 0; i < 1000; i++){if (acc_sup1_lect[i] != 0){fprintf(g,"%d;",acc_sup1_lect[i]);}}
     fprintf(g,"\nsup1_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup1_ecr[i] != 0){fprintf(g,"%d;",acc_sup1_ecr[i]);}}
+    for (int i = 0; i < 1000; i++){if (acc_sup1_ecr[i] != 0){fprintf(g,"%d;",acc_sup1_ecr[i]);}}
     fclose(g);
     system("start ./test2/insr1_sup1_test.csv");
     sleep(0.5);
