@@ -20,7 +20,7 @@ int main()
         
     int cle=0,op=0, cond =0,choix;
     int nb_de_insertion = 0, nb_de_suppression = 0 ;
-    int trouv , size_text= 1000 ;
+    int trouv , size_text= 200 ;
     Tenreg hamza;
     FILE *f;
      
@@ -84,9 +84,12 @@ int main()
             insertion2(&fic22,hamza,&nb_acc_l_I22,&nb_acc_e_I22);
                 acc_ins22_lect[j] =  nb_acc_l_I22 ; 
                 acc_ins22_ecr[j] =   nb_acc_e_I22;
+            
             j++;
             nb_de_insertion ++;
         }
+        //printf("%d %d %d %d %d ",nb_acc_e_I11,nb_acc_e_I12,nb_acc_e_I21,nb_acc_e_I22);
+        //printf("\t%d %d %d %d %d \n",nb_acc_l_I11,nb_acc_l_I12,nb_acc_l_I21,nb_acc_l_I22);
     }
    
     printf(" Nombre d'elements qui contient 0 = [%d]  |||  Nombre d'elements qui contient 1 = [%d] \n", nb_de_suppression, nb_de_insertion);
@@ -98,42 +101,42 @@ int main()
     fermer_LOF(&fic22);
 
     FILE *g = fopen("./test2/general.csv","w+");
-    
+    int MAX = 100;
     fprintf(g,"ins11_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins11_lect[i] != 0){fprintf(g,"%d;",acc_ins11_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins11_lect[i] != 0){fprintf(g,"%d;",acc_ins11_lect[i]);}}
     fprintf(g,"\nins11_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins11_ecr[i] != 0){fprintf(g,"%d;",acc_ins11_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins11_ecr[i] != 0){fprintf(g,"%d;",acc_ins11_ecr[i]);}}
     fprintf(g,"\nsup11_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup11_lect[i] != 0){fprintf(g,"%d;",acc_sup11_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup11_lect[i] != 0){fprintf(g,"%d;",acc_sup11_lect[i]);}}
     fprintf(g,"\nsup11_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup11_ecr[i] != 0){fprintf(g,"%d;",acc_sup11_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup11_ecr[i] != 0){fprintf(g,"%d;",acc_sup11_ecr[i]);}}
     
     fprintf(g,"\nins21_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins21_lect[i] != 0){fprintf(g,"%d;",acc_ins21_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins21_lect[i] != 0){fprintf(g,"%d;",acc_ins21_lect[i]);}}
     fprintf(g,"\nins21_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins21_ecr[i] != 0){fprintf(g,"%d;",acc_ins21_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins21_ecr[i] != 0){fprintf(g,"%d;",acc_ins21_ecr[i]);}}
     fprintf(g,"\nsup21_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup21_lect[i] != 0){fprintf(g,"%d;",acc_sup21_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup21_lect[i] != 0){fprintf(g,"%d;",acc_sup21_lect[i]);}}
     fprintf(g,"\nsup21_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup21_ecr[i] != 0){fprintf(g,"%d;",acc_sup21_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup21_ecr[i] != 0){fprintf(g,"%d;",acc_sup21_ecr[i]);}}
 
     fprintf(g,"\nins12_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins12_lect[i] != 0){fprintf(g,"%d;",acc_ins12_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins12_lect[i] != 0){fprintf(g,"%d;",acc_ins12_lect[i]);}}
     fprintf(g,"\nins12_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins12_ecr[i] != 0){fprintf(g,"%d;",acc_ins12_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins12_ecr[i] != 0){fprintf(g,"%d;",acc_ins12_ecr[i]);}}
     fprintf(g,"\nsup12_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup12_lect[i] != 0){fprintf(g,"%d;",acc_sup12_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup12_lect[i] != 0){fprintf(g,"%d;",acc_sup12_lect[i]);}}
     fprintf(g,"\nsup12_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup12_ecr[i] != 0){fprintf(g,"%d;",acc_sup12_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup12_ecr[i] != 0){fprintf(g,"%d;",acc_sup12_ecr[i]);}}
 
     fprintf(g,"\nins22_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins22_lect[i] != 0){fprintf(g,"%d;",acc_ins22_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins22_lect[i] != 0){fprintf(g,"%d;",acc_ins22_lect[i]);}}
     fprintf(g,"\nins22_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_ins22_ecr[i] != 0){fprintf(g,"%d;",acc_ins22_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_ins22_ecr[i] != 0){fprintf(g,"%d;",acc_ins22_ecr[i]);}}
     fprintf(g,"\nsup22_lect_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup22_lect[i] != 0){fprintf(g,"%d;",acc_sup22_lect[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup22_lect[i] != 0){fprintf(g,"%d;",acc_sup22_lect[i]);}}
     fprintf(g,"\nsup22_ecr_LOF;");
-    for (int i = 0; i < 100; i++){if (acc_sup22_ecr[i] != 0){fprintf(g,"%d;",acc_sup22_ecr[i]);}}
+    for (int i = 0; i < MAX; i++){if (acc_sup22_ecr[i] != 0){fprintf(g,"%d;",acc_sup22_ecr[i]);}}
 
 
     fclose(g);
