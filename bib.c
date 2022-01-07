@@ -5,7 +5,7 @@
 #include "bib.h"
 
 
-/*----------------------------------------Machine Abstraite LOF Et modules demandés ------------------------------------------*/
+/*----------------------------------------Machine Abstraite LOF Et modules demandï¿½s ------------------------------------------*/
 
 
 void ouvrir_LOF(LOF *fic ,char NomFichier[],char mode) {
@@ -29,7 +29,7 @@ void fermer_LOF( LOF *fic){
     rewind(fic->fichier); //se ramener au Debut du fichier
     fwrite(&(fic->entete),sizeof(LOF_entete),1,fic->fichier ); //sauvegarder l'entete
     fclose(fic->fichier); // fermer le fichier
-    free(fic); // libérer la structure allouée
+    free(fic); // libï¿½rer la structure allouï¿½e
 }
 /*--------------------------------------------------------------------------------------------*/
 void lireDir_LOF(LOF *fic , int num_bloc , LBuffer *buf){
@@ -532,10 +532,11 @@ void Menu ()
     printf (" \n -----------------------------------------------------------------------------MENU---------------------------------------------------------------------------\n");
     printf ( "||  NOTE IMPORTANTE || : si vous ne creez pas un nouveau fichier texte toutes les operations vont se faire en utlisant le fichier qui existe dans le Folder  \n");
     printf ( " \n                    1. Afficher le fichier LOF\n");
-    printf ( "                    2. Creer un nouveau fichier texte ( aléatoire) \n");
+    printf ( "                    2. Creer un nouveau fichier texte ( alï¿½atoire) \n");
     printf ( "                    3. Faire supression 1 avec insertion 1 \n");
     printf ( "                    4. Faire supression 1 avec insertion 2 \n");
     printf ( "                    5. Faire supression 2 avec insertion 1 \n");
     printf ( "                    6. Faire supression 2 avec insertion 2 \n");
     printf ( "                    7. EXIT \n");
+    //Dernier version
 }
