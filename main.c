@@ -50,8 +50,33 @@ int main()
     fclose(f);
     fermer_LOF(&fic);
 
+FILE *g = fopen("./test2/insr1_sup1_test.csv","w+");
+    fprintf(g,"insr1_LOF;");
+    for (int i = 0; i < 100; i++)
+    {
+        //fprintf(g,"%d;%d\n",acc_sup[i],acc_ins[i]);
+        fprintf(g,"%d;",acc_ins1[i]);
+    }
+    fprintf(g,"\n");
+    fprintf(g,"sup1_LOF;");
+    for (int i = 0; i < 100; i++)
+    {
+        //fprintf(g,"%d;%d\n",acc_sup[i],acc_ins[i]);
+        fprintf(g,"%d;",acc_sup1[i]);
+    }
+    fclose(g);
+    system("start ./test2/insr1_sup1_test.csv");
+    sleep(0.5);
+    system("start ./test2/insr1_sup1_test_graph.xlsx");
+    printf("Hello world");
 
-    FILE *g = fopen("./test/insr1_sup1_test.csv","w+");
+
+    return 0;
+
+}
+
+
+/*FILE *g = fopen("./test/insr1_sup1_test.csv","w+");
     fprintf(g,"insr1_LOF;sup1_LOF\n");
     for (int i = 0; i < 100; i++)
     {
@@ -61,30 +86,6 @@ int main()
     system("start ./test/insr1_sup1_test.csv");
     sleep(0.5);
     system("start ./test/insr1_sup1_test_graph.xlsx");
-    printf("Hello world");
-
-
-    return 0;
-
-}
-
-
-/*FILE *g = fopen("./test2/insr1_sup1_test.csv","w+");
-    fprintf(g,"insr1_LOF;");
-    for (int i = 0; i < 100; i++)
-    {
-        //fprintf(g,"%d;%d\n",acc_sup[i],acc_ins[i]);
-        fprintf(g,"%d;",acc_ins[i]);
-    }
-    fprintf(g,"\n");
-    fprintf(g,"sup1_LOF;");
-    for (int i = 0; i < 100; i++)
-    {
-        //fprintf(g,"%d;%d\n",acc_sup[i],acc_ins[i]);
-        fprintf(g,"%d;",acc_sup[i]);
-    }
-    fclose(g);
-    system("start ./test2/insr1_sup1_test.csv");
-    sleep(0.5);
-    system("start ./test2/insr1_sup1_test_graph.xlsx");
     printf("Hello world");*/
+
+    
