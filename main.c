@@ -22,13 +22,14 @@ int main()
     chargement_initial_LOF(&fic,1,"Hamza.txt");
     f = fopen("Hamza.txt","r+");
     int i=0,j=0;
-    int acc_ins1[10000],acc_sup1[10000];
+    int acc_ins1_lect[10000],acc_sup1_lect[10000],acc_ins1_ecr[10000],acc_sup1_ecr[10000];
     while (!feof(f))
     {
         fscanf(f,"%d %d",&cle,&op);
         if (op == 0) {
             suppression1(&fic,cle,&nb_acc_l,&nb_acc_e);
-            acc_sup1[i] =  nb_acc_l + nb_acc_e ;
+            acc_sup1_lect[i] =  nb_acc_l  ;
+            acc_sup1_ecr[i] =   nb_acc_e;
             i++;
             //printf("acc = %d\n",nb_acc_l + nb_acc_e);
             nb_de_suppression++;
@@ -38,7 +39,8 @@ int main()
 
             hamza.cle=cle;
             insertion1(&fic,hamza,&nb_acc_l,&nb_acc_e);
-            acc_ins1[j] =  nb_acc_l + nb_acc_e ;
+            acc_ins1_lect[j] =  nb_acc_l  ;
+            acc_ins1_ecr[j] =   nb_acc_e;
             j++;
             //printf("\tacc = %d\n",nb_acc_l + nb_acc_e);
             nb_de_insertion ++;
@@ -50,20 +52,16 @@ int main()
     fclose(f);
     fermer_LOF(&fic);
 
-FILE *g = fopen("./test2/insr1_sup1_test.csv","w+");
-    fprintf(g,"insr1_LOF;");
-    for (int i = 0; i < 100; i++)
-    {
-        //fprintf(g,"%d;%d\n",acc_sup[i],acc_ins[i]);
-        fprintf(g,"%d;",acc_ins1[i]);
-    }
-    fprintf(g,"\n");
-    fprintf(g,"sup1_LOF;");
-    for (int i = 0; i < 100; i++)
-    {
-        //fprintf(g,"%d;%d\n",acc_sup[i],acc_ins[i]);
-        fprintf(g,"%d;",acc_sup1[i]);
-    }
+    FILE *g = fopen("./test2/insr1_sup1_test.csv","w+");
+    
+    fprintf(g,"ins1_lect_LOF;");
+    for (int i = 0; i < 100; i++){if (acc_ins1_lect[i] != 0){fprintf(g,"%d;",acc_ins1_lect[i]);}}
+    fprintf(g,"\nins1_ecr_LOF;");
+    for (int i = 0; i < 100; i++){if (acc_ins1_ecr[i] != 0){fprintf(g,"%d;",acc_ins1_ecr[i]);}}
+    fprintf(g,"\nsup1_lect_LOF;");
+    for (int i = 0; i < 100; i++){if (acc_sup1_lect[i] != 0){fprintf(g,"%d;",acc_sup1_lect[i]);}}
+    fprintf(g,"\nsup1_ecr_LOF;");
+    for (int i = 0; i < 100; i++){if (acc_sup1_ecr[i] != 0){fprintf(g,"%d;",acc_sup1_ecr[i]);}}
     fclose(g);
     system("start ./test2/insr1_sup1_test.csv");
     sleep(0.5);
