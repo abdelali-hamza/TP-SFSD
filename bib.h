@@ -2,7 +2,7 @@
 #define BIB_H_INCLUDED
 
 
-#define b 100
+#define b 10
 
 
 

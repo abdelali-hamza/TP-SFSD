@@ -18,7 +18,7 @@ int main()
     printf(" nb_acc_lect = [%d]  |||  nb_acc_ecrt = [%d] \n",nb_acc_l,nb_acc_e);
     srand(time(NULL));
     ouvrir_LOF(&fic,"LOF",'N');
-    createRandomTextFile(size_text,"Hamza.txt");
+    //createRandomTextFile(size_text,"Hamza.txt");
     chargement_initial_LOF(&fic,1,"Hamza.txt");
     f = fopen("Hamza.txt","r+");
     int i=0,j=0;
