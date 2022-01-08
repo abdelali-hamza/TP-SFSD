@@ -20,7 +20,7 @@ int main()
         
     int cle=0,op=0, cond =0,choix;
     int nb_de_insertion = 0, nb_de_suppression = 0 ;
-    int trouv , size_text= 200 ;
+    int trouv , size_text= 10000 ;
     Tenreg hamza;
     FILE *f;
      
@@ -28,15 +28,15 @@ int main()
     srand(time(NULL));
     createRandomTextFile(size_text,"Hamza.txt");
     
-    ouvrir_LOF(&fic11,"LOF",'N');
-    ouvrir_LOF(&fic12,"LOF",'N');
-    ouvrir_LOF(&fic21,"LOF",'N');
-    ouvrir_LOF(&fic22,"LOF",'N');
+    ouvrir_LOF(&fic11,"LOF1",'N');
+    ouvrir_LOF(&fic12,"LOF2",'N');
+    ouvrir_LOF(&fic21,"LOF3",'N');
+    ouvrir_LOF(&fic22,"LOF4",'N');
     
-    chargement_initial_LOF(&fic11,1,"Hamza.txt");
-    chargement_initial_LOF(&fic12,1,"Hamza.txt");
-    chargement_initial_LOF(&fic21,1,"Hamza.txt");
-    chargement_initial_LOF(&fic22,1,"Hamza.txt");
+    chargement_initial_LOF(&fic11,0.2,"Hamza.txt");
+    chargement_initial_LOF(&fic12,0.2,"Hamza.txt");
+    chargement_initial_LOF(&fic21,0.2,"Hamza.txt");
+    chargement_initial_LOF(&fic22,0.2,"Hamza.txt");
     
     
     f = fopen("Hamza.txt","r+");
@@ -101,7 +101,7 @@ int main()
     fermer_LOF(&fic22);
 
     FILE *g = fopen("./test2/general.csv","w+");
-    int MAX = 100;
+    int MAX = 5000;
     fprintf(g,"ins11_lect_LOF;");
     for (int i = 0; i < MAX; i++){if (acc_ins11_lect[i] != 0){fprintf(g,"%d;",acc_ins11_lect[i]);}}
     fprintf(g,"\nins11_ecr_LOF;");
